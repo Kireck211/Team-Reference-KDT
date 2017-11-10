@@ -1,0 +1,25 @@
+// Program to print all prime factors
+# include <stdio.h>
+# include <math.h>
+void primeFactors(int n)
+{
+    // Print the number of 2s that divide n
+    while (n%2 == 0)
+    {
+        printf("%d ", 2);
+        n = n/2;
+    }
+    for (int i = 3; i <= sqrt(n); i = i+2)
+    {
+        // While i divides n, print i and divide n
+        while (n%i == 0)
+        {
+            printf("%d ", i);
+            n = n/i;
+        }
+    }
+    if (n > 2)
+        printf ("%d ", n);
+}
+
+// Taken from https://github.com/Aksh77/ACM-Team-Notebook
